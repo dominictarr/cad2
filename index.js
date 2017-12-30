@@ -15,11 +15,14 @@ resize()
 
 document.body.appendChild(container)
 
-var v = require('jscad-viewer')(container, {})
+var opts = require('minimist')(process.argv.slice(2))
+
+var v = new (require('jscad-viewer'))(container, opts)
 
 var model = require(path.resolve(process.cwd(), process.argv[2]))(csg)
+V = v
 v.setCsg(model)
 
-
-
+//var base64 = v.canvas.toDataURL('image/png')
+//require('fs').writeFileSync('output.png', new Buffer(base64.substring(base64.indexOf(',')+1), 'base64'))
 

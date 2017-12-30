@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "cardinal-spline-js": "^2.3.6",
-    "jscad-viewer": "^1.0.0"
+    "jscad-viewer": "^1.0.0",
+    "minimist": "^1.2.0"
   },
   "devDependencies": {},
   "scripts": {
