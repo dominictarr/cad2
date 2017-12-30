@@ -33,7 +33,7 @@ exports.snapY = snap
 
 function smooth2D (points, tension, sides) {
   tension = tension || 0.5
-  sides = sides || 3
+  sides = sides || 5
   var p = Cardinal.getCurvePoints(points.reduce(function (a, b) {
       return a.concat(b)
     }), tension, sides)
@@ -51,10 +51,10 @@ function smooth (points, step, tension) {
   step = step || 1
   var smoothX = m.snapY(smooth2D(points.map(function (e) {
     return [e[0],e[1]]
-  }), tension), step)
+  }), tension, 10), step)
   var smoothZ = m.snapY(smooth2D(points.map(function (e) {
     return [e[2],e[1]]
-  }), tension), step)
+  }), tension, 10), step)
 
   return smoothX.map(function (e, i) {
     return [e[0],e[1], smoothZ[i][0]]
