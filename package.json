@@ -8,6 +8,7 @@
     "url": "git://github.com/dominictarr/cad2.git"
   },
   "dependencies": {
+    "@jscad/io": "^0.3.12",
     "cardinal-spline-js": "^2.3.6",
     "jscad-viewer": "^1.0.0",
     "minimist": "^1.2.0"

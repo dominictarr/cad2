@@ -34,8 +34,3 @@ module.exports = function (_) {
 //  return _.CSG.sphere({center: [0,0,0], radius: 10, resolution: 100})
 }
 
-
-
-
-
-
