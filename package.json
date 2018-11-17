@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@jscad/io": "^0.3.12",
+    "b-spline": "^2.0.1",
     "cardinal-spline-js": "^2.3.6",
     "jscad-viewer": "^1.0.0",
     "minimist": "^1.2.0"

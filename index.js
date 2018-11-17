@@ -26,3 +26,14 @@ v.setCsg(model)
 //var base64 = v.canvas.toDataURL('image/png')
 //require('fs').writeFileSync('output.png', new Buffer(base64.substring(base64.indexOf(',')+1), 'base64'))
 
+
+var data = require('@jscad/stl-serializer').serialize(model)
+require('fs').writeFileSync('output.stl', (Buffer.concat(data.map(function (ab) {
+  return Buffer.from(ab)
+}))))
+//console.log(Buffer.concat(.map(Buffer.from) ))
+
+//require('fs').writeFileSync('output.stl',
+//  require('@jscad/stl-serializer')(model)
+//)
+
