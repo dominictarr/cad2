@@ -19,7 +19,7 @@ module.exports = function (_) {
       start: [0,0,0],
       end: [0,0,height],
       radius: width/2,
-//      resolution: 180
+      resolution: 180
     })
   }
 
