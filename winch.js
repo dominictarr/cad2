@@ -18,7 +18,7 @@ module.exports = function (_) {
   function cone (r, h) {
     return _.CAG
       .fromPoints([[0,0,0], [0, h, 0], [r/2, 0, 0]])
-      .rotateExtrude()
+      .rotateExtrude({resolution: 90})
   }
 
   function cyl (width, height) {
