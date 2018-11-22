@@ -54,9 +54,9 @@ module.exports = function (_) {
   }
 
   var handle = union([
-    cube(12.8, 25),
-    cube(12.8, 25).rotateZ(45),
-    cone(12.8*Math.sqrt(2), 6.4),
+    cube(17.8, 25),
+    cube(17.8, 25).rotateZ(45),
+    cone(17.8*Math.sqrt(2), 6.4),
     cyl(12.8*Math.sqrt(2), 5).translate([0,0,20]),
     cyl(12, 31),
     cyl(7, 50),
@@ -94,30 +94,6 @@ module.exports = function (_) {
 //  .union(handle)
   .subtract(handle)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
