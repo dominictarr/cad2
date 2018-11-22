@@ -2,6 +2,13 @@
 
 module.exports = function (_) {
 
+  function o(size) {
+    return size - 0.2
+  }
+  function i(size) {
+    return size + 0.2
+  }
+
   function union (shapes) {
     return shapes.reduce(function (a, b) {
       return a.union(b)
@@ -54,46 +61,41 @@ module.exports = function (_) {
   }
 
   var handle = union([
-    cube(17.8, 25),
-    cube(17.8, 25).rotateZ(45),
-    cone(17.8*Math.sqrt(2), 6.4),
-    cyl(12.8*Math.sqrt(2), 5).translate([0,0,20]),
-    cyl(12, 31),
-    cyl(7, 50),
+    cube(i(17.8), 25),
+    cube(i(17.8), 25).rotateZ(45),
+    cone(i(17.8)*Math.sqrt(2), 6.4),
+    cyl(i(12.8)*Math.sqrt(2), 5).translate([0,0,20]),
+    cyl(i(12), 31),
+    cyl(i(7), 50),
   ])
 
-//  return cyl(56.8, 12)
-//    .subtract(
-//      cone(56.8*2, 4).rotateX(180).translate([0,0,12+2])
-//    )
-
-//  return handle
-
   return M = union([
-    cyl(56.8, 4),
-    cyl(53.9, 5.9),
-    cyl(53.9, 16.3).intersect(box),
+    cyl(o(56.8), 4),
+    cyl(o(53.9), 5.9),
+    cyl(o(53.9), 16.3).intersect(box),
 
     union([
-      cyl(44.5, 30.1)
+      cyl(o(44.5), 30.1)
         .intersect(box2.union(box3)),
-      cyl(31.4, 30.1),
-      cyl(44.5, 17.9).intersect(box)
+      cyl(o(31.4), 30.1),
+      cyl(o(44.5), 17.9).intersect(box)
     ])
       .subtract(
         union([
-        cyl(7.8, 130.7)
-          .translate([0,(25.3+7.8)/2, 0]),
-        cyl(7.8, 130.7)
-          .translate([0,-(25.3+7.8)/2, 0])
+        cyl(i(7.8), 130.7)
+          .translate([0,(o(25.3)+o(7.8)+0.5)/2, 0]),
+        cyl(i(7.8), 130.7)
+          .translate([0,-(o(25.3)+o(7.8)+0.5)/2, 0])
         ]).rotateZ(-5)
       )
     ,
-    cyl(25.3, 50.2).subtract(hex)
+    cyl(o(25.3), 50.2).subtract(hex)
   ])
-//  .union(handle)
   .subtract(handle)
 }
+
+
+
 
 
 
