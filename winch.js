@@ -71,7 +71,7 @@ module.exports = function (_) {
     cube(i(17.8), 25),
     cube(i(17.8), 25).rotateZ(45),
     cone(i(17.8)*Math.sqrt(2), 6.4),
-    cyl(i(12.8)*Math.sqrt(2), 5).translate([0,0,20]),
+    cyl(i(17.8)*Math.sqrt(2), 5).translate([0,0,20]),
     cyl(i(12), 31),
     cyl(i(7), 50),
   ]).rotateZ(360/16)
