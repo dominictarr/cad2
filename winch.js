@@ -94,9 +94,9 @@ module.exports = function (_) {
         union([
         //0.2 bigger so fit isn't too tight.
         cyl(i(7.8+0.2), 130.7)
-          .translate([0,(o(25.3)+o(7.8)+1)/2, 0]),
+          .translate([0,(o(25.3)+o(7.8)+2)/2, 0]),
         cyl(i(7.8+0.2), 130.7)
-          .translate([0,-(o(25.3)+o(7.8)+1)/2, 0])
+          .translate([0,-(o(25.3)+o(7.8)+2)/2, 0])
         ]).rotateZ(-5)
       )
     ,
