@@ -104,6 +104,6 @@ module.exports = function (_) {
   ])
   .subtract(handle)
   //finally, to get around 3d quirk, scale whole thing 1.022 in Z axis
-  .scale([1,1,1.022])
+  .scale([1,1,1/1.022])
 }
 
