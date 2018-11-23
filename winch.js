@@ -30,26 +30,33 @@ module.exports = function (_) {
     })
   }
 
+  var W = 12.5
   var box = _.CSG.cube({
-    corner1: [-10, 50, 0],
-    corner2: [10, -50, 100],
+    corner1: [-W, 50, 0],
+    corner2: [W, -50, 100],
   })
 
   var box2 = _.CSG.cube({
-    corner1: [-10, 0, 0],
+    corner1: [-W, 0, 0],
     corner2: [0, -50, 100],
   })
   var box3 = _.CSG.cube({
     corner1: [0, 50, 0],
-    corner2: [10, 0, 100],
+    corner2: [W, 0, 100],
   })
+
+  function side (flat_radius) {
+    return 2  * (flat_radius / Math.sqrt(3))
+
+  }
 
   var hex = _.CSG.cylinder({
       start: [0,0,50.2-15.3],
       end: [0,0, 55],
       resolution: 6,
       //i think radius is measured across the points
-      radius: 14.4/2 //across the points
+      radius: side(i(12.7))/2
+//      radius: (14.4)/2 //across the points
 //      radius: 12.7/2 //across the flats
   })
 
@@ -67,7 +74,10 @@ module.exports = function (_) {
     cyl(i(12.8)*Math.sqrt(2), 5).translate([0,0,20]),
     cyl(i(12), 31),
     cyl(i(7), 50),
-  ])
+  ]).rotateZ(360/16)
+
+  //just the hex
+//  return cyl(o(25.3), 10).subtract(hex.translate([0,0,-40]))
 
   return M = union([
     cyl(o(56.8), 4),
@@ -82,41 +92,18 @@ module.exports = function (_) {
     ])
       .subtract(
         union([
-        cyl(i(7.8), 130.7)
-          .translate([0,(o(25.3)+o(7.8)+0.5)/2, 0]),
-        cyl(i(7.8), 130.7)
-          .translate([0,-(o(25.3)+o(7.8)+0.5)/2, 0])
+        //0.2 bigger so fit isn't too tight.
+        cyl(i(7.8+0.2), 130.7)
+          .translate([0,(o(25.3)+o(7.8)+1)/2, 0]),
+        cyl(i(7.8+0.2), 130.7)
+          .translate([0,-(o(25.3)+o(7.8)+1)/2, 0])
         ]).rotateZ(-5)
       )
     ,
     cyl(o(25.3), 50.2).subtract(hex)
   ])
   .subtract(handle)
+  //finally, to get around 3d quirk, scale whole thing 1.022 in Z axis
+  .scale([1,1,1.022])
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
