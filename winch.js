@@ -80,7 +80,7 @@ module.exports = function (_) {
 //  return cyl(o(25.3), 10).subtract(hex.translate([0,0,-40]))
 
   return M = union([
-    cyl(o(56.8), 4),
+    cyl(o(56.8), 3.1),
     cyl(o(53.9), 5.9),
     cyl(o(53.9), 16.3).intersect(box),
 
