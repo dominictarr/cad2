@@ -22,7 +22,7 @@ module.exports = function (_) {
 
   var Hex = create(_)
   return Hex({
-    radius: out(12.7),
+    radius: out(12.7/2),
     start: [0,0,0],
     end: [0,0,20],
   })
