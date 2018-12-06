@@ -25,7 +25,7 @@ module.exports = function (_) {
     //    .extrude([0,0,0.1])
       .union(
         _.CSG.cylinder({
-          radius: axel_diameter,
+          radius: axel_diameter*3/4,
           start: [0, 0, -width/2],
           end: [0, 0, width/2]
         })
