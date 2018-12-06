@@ -11,7 +11,7 @@ module.exports = function (_) {
     var rope_diameter = o(6);
     var pulley_diameter = o(28)
     var width = o(9.5) //rope_diameter * 1.2
-    var axel_diameter = i(8)
+    var axel_diameter = i(8+0.2)
     var clearance = 0.5
 
     var half_width = (width)/2 - clearance
